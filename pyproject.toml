@@ -1,0 +1,11 @@
+[project]
+name = "yolo-det"
+version = "1.0.0"
+description = "YOLOv8n ONNX Inference Program"
+requires-python = ">=3.10"
+dependencies = [
+    "opencv-python",
+]
+
+[project.scripts]
+yolo-detect = "yolo_detect:main"
