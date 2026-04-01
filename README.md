@@ -9,6 +9,18 @@ This project provides a highly optimized YOLOv8n object detection implementation
 
 ---
 
+# Setup
+Download the ARMNN delegate for Raspberry Pi 4:
+
+https://github.com/ARM-software/armnn/releases/download/v26.01/ArmNN-linux-aarch64.tar.gz
+
+Run the following:
+```
+wget https://github.com/ARM-software/armnn/releases/download/v26.01/ArmNN-linux-aarch64.tar.gz
+tar -xvf ArmNN-linux-aarch64.tar.gz
+```
+
+
 ## 🛠 Features
 
 ### 1. Standalone Detection (`yolo_detect.py`)
