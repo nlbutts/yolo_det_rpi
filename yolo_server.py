@@ -13,7 +13,10 @@ def main():
     parser.add_argument("-p", "--port", type=int, default=5555, help="ZMQ port to listen on")
     parser.add_argument("-c", "--confidence", type=float, default=0.5, help="Detection confidence threshold")
     parser.add_argument("-n", "--nms-thresh", type=float, default=0.45, help="NMS IoU threshold")
-    parser.add_argument("-t", "--threads", type=int, default=0, help="Number of threads for OpenCV")
+    parser.add_argument("-t", "--threads", type=int, default=None, help="Number of threads for CPU execution")
+    parser.add_argument("--delegate", type=str, 
+                        default="/home/nlbutts/projects/litert/armnn/delegate/libarmnnDelegate.so.29.1",
+                        help="Path to the ArmNN delegate library")
 
     args = parser.parse_args()
 
@@ -23,6 +26,7 @@ def main():
         confidence_thresh=args.confidence,
         nms_thresh=args.nms_thresh,
         num_threads=args.threads,
+        delegate_path=args.delegate
     )
     print("Model loaded successfully!")
 
